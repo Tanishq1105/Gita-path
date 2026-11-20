@@ -1,0 +1,19 @@
+{
+  "backend": {
+    "passed": true,
+    "tests": 78
+  },
+  "javascript_lint": {
+    "passed": true
+  },
+  "frontend": {
+    "passed": true,
+    "tests": 45
+  },
+  "production_build": {
+    "passed": true
+  },
+  "packaged_python_only_runtime": {
+    "passed": true
+  }
+}

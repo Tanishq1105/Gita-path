@@ -1,0 +1,38 @@
+# Render FREE plan: use with a free Neon Postgres (see docs/DEPLOYMENT.md, "Free hosting").
+# In Render: New + > Blueprint > pick this repo > set "Blueprint file path" to render.free.yaml
+# (or create a Web Service by hand with the same settings).
+services:
+  - type: web
+    name: gita-path
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        sync: false      # the Neon connection string, starts with postgresql://
+      - key: GITA_SECURE_COOKIES
+        value: "1"
+      - key: GITA_BEHIND_PROXY
+        value: "1"
+      - key: GITA_SECRET_KEY
+        generateValue: true
+      - key: GITA_SMTP_HOST
+        value: smtp-relay.brevo.com
+      - key: GITA_SMTP_PORT
+        value: "2525"    # Render's free plan blocks ports 25, 465 and 587; Brevo also accepts 2525
+      - key: GITA_SMTP_USER
+        sync: false
+      - key: GITA_SMTP_PASSWORD
+        sync: false
+      - key: GITA_SMTP_FROM
+        sync: false      # a sender verified in Brevo
+      - key: GITA_SITE_URL
+        sync: false      # e.g. https://gita-path.onrender.com
+      - key: GITA_TIMEZONE
+        value: Asia/Kolkata
+      - key: GITA_DAILY_TIME
+        value: "06:00"
+      - key: GITA_ADMIN_EMAIL
+        sync: false
+      - key: GITA_ADMIN_PASSWORD
+        sync: false

@@ -1,0 +1,41 @@
+{
+  "name": "Gita Path \u2014 JavaScript and Flask",
+  "version": "2.1.0",
+  "package_root": "gita-path-js-flask",
+  "stack": [
+    "React",
+    "JavaScript",
+    "Vite",
+    "Flask",
+    "Waitress"
+  ],
+  "frontend_language": "JavaScript (.js and .jsx)",
+  "chapters": 18,
+  "verses": 701,
+  "audio_files": 2804,
+  "tests": 67,
+  "runtime_requires_node": false,
+  "build_included": true,
+  "source_included": true,
+  "personal_data": "browser localStorage with JSON backup/restore",
+  "audio_language": "Sanskrit, Hindi, English",
+  "validation": {
+    "backend": {
+      "passed": true,
+      "tests": 29
+    },
+    "javascript_lint": {
+      "passed": true
+    },
+    "frontend": {
+      "passed": true,
+      "tests": 38
+    },
+    "production_build": {
+      "passed": true
+    },
+    "packaged_python_only_runtime": {
+      "passed": true
+    }
+  }
+}

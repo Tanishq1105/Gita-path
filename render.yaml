@@ -1,0 +1,39 @@
+# Render Blueprint: New + > Blueprint, point it at this repository.
+# A persistent disk needs a paid instance; without it every deploy would erase accounts.
+services:
+  - type: web
+    name: gita-path
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    disk:
+      name: gita-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: GITA_DB_PATH
+        value: /data/gita.db
+      - key: GITA_SECURE_COOKIES
+        value: "1"
+      - key: GITA_BEHIND_PROXY
+        value: "1"
+      - key: GITA_SECRET_KEY
+        generateValue: true
+      - key: GITA_SITE_URL
+        sync: false      # e.g. https://gita-path.onrender.com
+      - key: GITA_SMTP_HOST
+        sync: false      # e.g. smtp.gmail.com or your mail service
+      - key: GITA_SMTP_PORT
+        value: "587"
+      - key: GITA_SMTP_USER
+        sync: false
+      - key: GITA_SMTP_PASSWORD
+        sync: false
+      - key: GITA_TIMEZONE
+        value: Asia/Kolkata
+      - key: GITA_DAILY_TIME
+        value: "06:00"
+      - key: GITA_ADMIN_EMAIL
+        sync: false      # you will be asked for this when creating the service
+      - key: GITA_ADMIN_PASSWORD
+        sync: false      # at least 8 characters; this is your admin log-in

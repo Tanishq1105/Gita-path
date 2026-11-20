@@ -1,0 +1,40 @@
+{
+  "name": "gita-path-standalone",
+  "version": "2.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "vitest run",
+    "format": "prettier --write src *.js *.json index.html",
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": "^22.13.0 || >=24.0.0"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "5.3.0",
+    "@fontsource/figtree": "5.3.0",
+    "@fontsource/literata": "5.3.0",
+    "@fontsource/noto-serif-devanagari": "5.3.0",
+    "lucide-react": "0.575.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-router-dom": "7.18.5",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.8",
+    "@vitejs/plugin-react": "5.2.0",
+    "eslint": "10.13.0",
+    "globals": "17.13.0",
+    "jsdom": "26.1.0",
+    "prettier": "3.7.3",
+    "vite": "8.1.5",
+    "vitest": "4.1.10"
+  },
+  "description": "Standalone Bhagavad Gita reader: React JavaScript + Vite frontend and Flask backend."
+}
